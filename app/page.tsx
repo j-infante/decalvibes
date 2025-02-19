@@ -1,94 +1,33 @@
-import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, ThumbsUp, MessageCircle, Share2 } from "lucide-react"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
+import { Header } from "@/components/header"
+import { HeroSection } from "@/components/hero-section"
+import { ServicesSection } from "@/components/services-section"
 
 export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="px-4 lg:px-6 h-16 flex items-center border-b">
-        <Link className="flex items-center justify-center" href="#">
-          <Image src="/placeholder.svg?height=32&width=32" alt="Logo" width={32} height={32} className="rounded-lg" />
-          <span className="ml-2 text-2xl font-bold">Acme Inc</span>
-        </Link>
-        <nav className="ml-auto flex items-center gap-4 sm:gap-6">
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4 hidden sm:inline-block"
-            href="#features"
-          >
-            Features
-          </Link>
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4 hidden sm:inline-block"
-            href="#testimonials"
-          >
-            Testimonials
-          </Link>
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4 hidden sm:inline-block"
-            href="#pricing"
-          >
-            Pricing
-          </Link>
-          <ThemeToggle />
-        </nav>
-      </header>
+      <Header showNav />
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                  Revolutionize Your Business
-                </h1>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  Streamline operations, boost productivity, and drive growth with our innovative solutions.
-                </p>
-              </div>
-              <div className="space-y-4 sm:space-y-0 sm:space-x-4">
-                <Button asChild>
-                  <Link href="/get-started">Get Started</Link>
-                </Button>
-                <Button asChild variant="outline">
-                  <Link href="/learn-more">Learn More</Link>
-                </Button>
-              </div>
-            </div>
+          <div className="container mx-auto max-w-7xl px-4 md:px-6">
+            <HeroSection />
           </div>
         </section>
-        <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Our Features</h2>
-            <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
-              {[
-                "Automated Workflows",
-                "Real-time Analytics",
-                "Secure Cloud Storage",
-                "24/7 Customer Support",
-                "Customizable Dashboards",
-                "Seamless Integrations",
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center space-x-4">
-                  <CheckCircle className="w-8 h-8 text-primary" />
-                  <h3 className="text-xl font-bold">{feature}</h3>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-        <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+        <ServicesSection />
+        {/* <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container mx-auto max-w-7xl px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Customer Testimonials</h2>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 {
-                  name: "Jane Doe",
-                  role: "CEO of TechCorp",
-                  content: "Acme Inc has transformed the way we do business. Highly recommended!",
-                  avatar: "J",
+                  name: "Vrede",
+                  role: "Vrede Mobile Beverage Services",
+                  content: "Decal Vibes has transformed the way we do business. Highly recommended!",
+                  avatar: "V",
                 },
                 {
                   name: "John Smith",
@@ -139,9 +78,9 @@ export default function LandingPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
         <section id="cta" className="w-full py-12 md:py-24 lg:py-32 bg-primary text-primary-foreground">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto max-w-7xl px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -162,7 +101,7 @@ export default function LandingPage() {
         </section>
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-muted-foreground">© 2023 Acme Inc. All rights reserved.</p>
+        <p className="text-xs text-muted-foreground">© 2024 Decal Vibes. All rights reserved.</p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <Link className="text-xs hover:underline underline-offset-4" href="#">
             Terms of Service
